@@ -118,7 +118,7 @@ async def mergeSub(c: Client, cb: CallbackQuery, new_file_name: str):
         return
     if file_size > 2044723200 and Config.IS_PREMIUM == False:
         await cb.message.edit(
-            f"Video is Larger than 2GB Can't Upload,\n\n (Donate)[https://t.me/HYBRID_Bots/441] for premium services"
+            f"Video is Larger than 2GB Can't Upload,\n\n Donate: https://t.me/HYBRID_Bots/441 for premium services"
         )
         await delete_all(root=f"downloads/{str(cb.from_user.id)}")
         queueDB.update({cb.from_user.id: {"videos": [], "subtitles": [], "audios": []}})
@@ -126,7 +126,7 @@ async def mergeSub(c: Client, cb: CallbackQuery, new_file_name: str):
         return
     if Config.IS_PREMIUM and file_size > 4241280205:
         await cb.message.edit(
-            f"Video is Larger than 4GB Can't Upload,\n\n (Donate)[https://t.me/HYBRID_Bots/441] for premium services"
+            f"Video is Larger than 4GB Can't Upload,\n\n Donate: https://t.me/HYBRID_Bots/441 for premium services"
         )
         await delete_all(root=f"downloads/{str(cb.from_user.id)}")
         queueDB.update({cb.from_user.id: {"videos": [], "subtitles": [], "audios": []}})
